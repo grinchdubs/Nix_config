@@ -15,6 +15,10 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "broadcom-sta-6.30.223.271-57-6.12.38"
+  ];
+
   networking.hostName = "grnchnix"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -84,7 +88,7 @@
   # services.qemuGuest.enable = true;  
 
   # Set the default editor to vim
-  environment.variables.EDITOR = "vim";
+  environment.variables.EDITOR = "nvim";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -185,6 +189,7 @@
   wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
   sway
   mako # notification system developed by swaywm maintainer
+  wezterm
   ];
 
 
